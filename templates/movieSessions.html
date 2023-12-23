@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <h2>Сеансы фильма: {{ movie }}</h2>
+  <ul>
+    {% for session in sessions %}
+    <div class="movie">
+        <a href="{{ url_for('session_details', cinema_session_id=session[0]) }}">
+            Время: {{ session[3] }}<br> Зал: {{ session[2] }}
+        </a>
+    </div>
+    <br>
+    {% endfor %}
+  </ul>
+{% endblock %}
